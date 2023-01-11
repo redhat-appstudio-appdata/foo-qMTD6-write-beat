@@ -23,7 +23,7 @@ spec:
         app.kubernetes.io/instance: image-controller-grzh
     spec:
       containers:
-      - image: quay.io/redhat-appstudio/user-workload:sbose-builds-image-controller-grzh
+      - image: quay.io/redhat-appstudio/user-workload@sha256:73f9e324ea458a5f3a381e7ad794587013d9157aee985033e2d1753272ea7911
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
