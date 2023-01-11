@@ -1,0 +1,23 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: image-controller-grzh
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: image-controller-grzh
+    app.kubernetes.io/part-of: foo
+  name: image-controller-grzh
+  namespace: sbose-builds
+spec:
+  port:
+    targetPort: 8080
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: image-controller-grzh
+    weight: 100
+status: {}
