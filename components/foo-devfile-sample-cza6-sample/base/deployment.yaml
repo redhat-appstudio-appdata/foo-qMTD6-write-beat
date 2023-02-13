@@ -23,7 +23,7 @@ spec:
         app.kubernetes.io/instance: foo-devfile-sample-cza6-sample
     spec:
       containers:
-      - image: quay.io/redhat-appstudio/user-workload:sbose-builds-foo-devfile-sample-cza6-sample
+      - image: quay.io/redhat-appstudio/user-workload@sha256:d9c5d664352ed2b9a2b948560af9fc7d3f63b61cb04723c193a3355b1a95f94b
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
@@ -40,6 +40,9 @@ spec:
           tcpSocket:
             port: 3001
         resources:
+          limits:
+            cpu: "1"
+            memory: 512Mi
           requests:
             cpu: 10m
             memory: 50Mi

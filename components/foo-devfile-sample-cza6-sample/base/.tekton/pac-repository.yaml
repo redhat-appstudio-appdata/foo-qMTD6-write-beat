@@ -1,5 +1,5 @@
-apiVersion: route.openshift.io/v1
-kind: Route
+apiVersion: pipelinesascode.tekton.dev/v1alpha1
+kind: Repository
 metadata:
   annotations:
     appstudio.openshift.io/application: foo
@@ -9,14 +9,7 @@ metadata:
     build.appstudio.openshift.io/version: "0.1"
     pipelines.appstudio.openshift.io/type: build
   creationTimestamp: null
-  name: elfoo-devfile-sample-cza6-sample
+  name: foo-devfile-sample-cza6-sample
   namespace: sbose-builds
 spec:
-  path: /
-  port:
-    targetPort: 8080
-  to:
-    kind: Service
-    name: el-foo-devfile-sample-cza6-sample
-    weight: null
-status: {}
+  url: https://github.com/nodeshift-starters/devfile-sample
